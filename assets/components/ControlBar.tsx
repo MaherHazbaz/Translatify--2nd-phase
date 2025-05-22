@@ -111,21 +111,7 @@ const ControlBar: React.FC<ControlBarProps> = ({
         </Tooltip>
       </View>
 
-      {/* Slider */}
-      <View style={styles.sliderContainer}>
-        <Text style={styles.timeText}>{formatTime(playTime)}</Text>
-        <Slider
-          style={styles.slider}
-          minimumValue={0}
-          maximumValue={duration}
-          value={playTime}
-          onSlidingComplete={onSeek}
-          minimumTrackTintColor="#1DB954"
-          maximumTrackTintColor="#606060"
-          thumbTintColor="#1DB954"
-        />
-        <Text style={styles.timeText}>{formatTime(duration)}</Text>
-      </View>
+      
     </View>
   );
 };

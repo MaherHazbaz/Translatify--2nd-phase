@@ -9,7 +9,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useTheme } from "react-native-paper";
 import LottieView from "lottie-react-native";
 import * as Font from "expo-font";
-import CustomButton from "../components/CustomButton";
+import CustomButton from "../assets/components/CustomButton";
 
 const { width, height } = Dimensions.get("window");
 
@@ -23,7 +23,7 @@ const HomeScreen: React.FC = () => {
   useEffect(() => {
     async function loadFont() {
       await Font.loadAsync({
-        "Exo2-Italic": require("../fonts/Exo_2/static/Exo2-Italic.ttf"),
+        "Exo2-Italic": require("../assets/fonts/Exo_2/static/Exo2-Italic-VariableFont_wght.ttf"),
       });
       setFontLoaded(true);
     }
@@ -49,7 +49,7 @@ const HomeScreen: React.FC = () => {
     <View className="flex-1 justify-center items-center bg-gray-100 relative">
       {/* Lottie Background */}
       <LottieView
-        source={require("../animations/Animation.json")}
+        source={require("../assets/animations/Animation.json")}
         autoPlay
         loop
         style={{
@@ -63,22 +63,21 @@ const HomeScreen: React.FC = () => {
 
       {/* Centered Overlay Content */}
       <View className="w-full h-full justify-center items-center px-6 space-y-6">
-        <RNText onPress={()=>navigation.navigate("Player")}
+        <RNText
+          onPress={() => navigation.navigate("Player")}
           style={{
             fontSize: width * 0.12,
             fontFamily: "Exo2-Italic",
             color: theme.colors.primary,
             textAlign: "center",
             textShadowColor: "rgba(0, 0, 0, 0.3)",
-            textShadowOffset: { width: 4, height: 4 },
+            textShadowOffset: { width: 4, height: 3 },
             textShadowRadius: 6,
             letterSpacing: 3,
           }}
         >
           Translatify
         </RNText>
-
-        
       </View>
     </View>
   );
